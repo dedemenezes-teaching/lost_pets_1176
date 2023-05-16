@@ -1,0 +1,19 @@
+<h1>Lost Pets</h1>
+
+<%= link_to 'Report Lost Pet', new_pet_path, class: 'btn btn-light' %>
+
+<div class="container">
+  <div class="row">
+    <% @pets.each do |pet| %>
+      <div class="col-4 mb-3">
+        <div class="card-product">
+          <img src="http://source.unsplash.com/featured/?<%= pet.species %>" />
+          <div class="card-product-infos">
+            <h2><%= link_to pet.name, pet_path(pet) %></h2>
+            <p>Found <%= pet.found_days_ago %> days ago</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
